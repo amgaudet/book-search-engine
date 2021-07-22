@@ -17,6 +17,22 @@ const typeDefs = gql`
     link: String
     title: String
   }
+
+  type Auth {
+    token: ID!
+    user: User
+  }
+
+  type Query {
+    me: User
+  }
+
+  type Mutation {
+    createUser(username: String!, email: String!, password: String!)
+    login(email: String!, password: String!)
+    saveBook(authors: String!, description: String!, bookId: ID!, image: String!, link: String!, title: String!)
+    deleteBook(bookId)
+  }
 `;
 
 module.exports = typeDefs;
