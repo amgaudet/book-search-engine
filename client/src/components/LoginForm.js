@@ -31,12 +31,7 @@ const LoginForm = () => {
         variables: { ...userFormData }
       });
 
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
-
-      console.log(user);
-      Auth.login(token);
+      Auth.login(data.login.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
